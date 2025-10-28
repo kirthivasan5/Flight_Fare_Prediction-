@@ -1,32 +1,65 @@
-# Flight Fare Prediction
+## 🛫 Flight Fare Prediction – Step-by-Step Overview
 
-The business case of the Flight Fare Data set was to build a machine learning model to help predict the fare of various airlines in the future and let people decide and plan their travel. The data set has 10 features like Airline, Destination, Source, Departure time, Arrival time etc. The data set has a target column (output) as Price of the tickets purchased by the passengers who travelled earlier. Based on these previous records, the we had to build a model which could predict the future prices of the tickets and help travelers choose the best priced Airline for their future trips which could be cheaper for them.
+### 📌 Objective
+Build a machine learning model to predict flight ticket prices based on historical data, helping travelers make cost-effective decisions.
 
-To make predictions based on the available data set, different Machine Learning Algorithms were build as mentioned below:
+---
 
-Linear Regression
-Support Vector Machine
-K-Nearest Neighbour
-Decision Tree
-Random Forest
-XGBoost
-Gradient Boosting
-Out of all models above, Random Forest Algorithm, XGBoost Algorithm and Gradient Boosting Algorithm performed best with a R2 score of 0.87, 0.85 and 0.83 respectively. After Hyperparameter Tuning, all these algorithms gave an improved R2 score of 0.89.
+## 🔍 Step-by-Step Process
 
-In other words, it can be said that 89% of the data are fitting correctly into the model.
+### **Step 1: Problem Understanding**
+- Flight fares fluctuate due to multiple factors like airline, route, stops, and timing.
+- Goal: Predict future ticket prices using past data to assist in travel planning.
 
-**Report on Challenges Faced**
-Missing Values: There were very less missing data in the data set in Route and Total_Stops columns. These null values were dropped as such less missing data will not impact the data set
+---
 
-**Date Formatting**: The "Date_of_Journey" column was not in a standard date format and this was challenging in performing the date based analyses. Hence, we used the below mentioned technique to handled these data:
+### **Step 2: Data Collection**
+- Dataset includes 10+ features such as:
+  - `Airline`, `Source`, `Destination`
+  - `Date_of_Journey`, `Dep_Time`, `Arrival_Time`
+  - `Duration`, `Total_Stops`, `Additional_Info`
+  - Target variable: `Price`
 
-Date Parsing: The "Date_of_Journey" column was converted to a standardized date format (e.g., YYYY-MM-DD) to facilitate date-based calculations and comparisons. This was done by splitting the date string, extracting day, month, and year and then reformatting was done.
-Duration Data: The "Duration" column contained values in a non-standard format (e.g., "2h 50m"). Extracting meaningful insights from this column required converting it into a numeric format. The Technique used here is as follows:
+---
 
-Duration Conversion: The "Duration" column was transformed into a numeric format, representing the total duration of the journey in minutes. This involved splitting the string, extracting hours and minutes and converting them into minutes for easy analysis.
-Categorical Data: There were several columns like "Airline," "Source," "Destination," and "Total_Stops," that were categorical in nature. Theses columns were handled using Label Encoder and converted to Numerical Data type.
+### **Step 3: Data Preprocessing**
+- **Missing Values**: Dropped minimal nulls in `Route` and `Total_Stops`.
+- **Date Parsing**: Converted `Date_of_Journey` to `YYYY-MM-DD` format.
+- **Duration Conversion**: Transformed `"2h 50m"` into total minutes.
+- **Categorical Encoding**: Applied Label Encoding to convert text features into numeric format.
 
-Conclusion
-Using Flight Fare Prediction Dataset, I analyzed various data provided using different exploratory data analysis methods with the help of seaborn and matplotlip libraries. This data set is a supervised learning dataset so we used various regression models to do some predictions about the price of the flight based on some features like type of airline, what is the arrival time, what is the departure time, what is the duration of the flight, source, destination etc.
+---
 
-It can be concluded that among various models applied to this dataset, Random Forest Algorithm, XGBoost Algorithm and Gradient Boosting Algorithm performed best. The R2 score for all three algorithms were 0.89 which means that almost 89% of the data fit perfectly into the model and hence do the correct prediction.
+### **Step 4: Exploratory Data Analysis (EDA)**
+- Used **Seaborn** and **Matplotlib** to visualize:
+  - Price trends across airlines and routes
+  - Impact of stops and duration on fare
+  - Seasonal and time-based fare variations
+
+---
+
+### **Step 5: Model Building**
+- Applied multiple regression models:
+  - Linear Regression
+  - Support Vector Machine
+  - K-Nearest Neighbors
+  - Decision Tree
+  - **Random Forest**
+  - **XGBoost**
+  - **Gradient Boosting**
+
+---
+
+### **Step 6: Model Evaluation**
+- Metrics used: **R² Score**, **MAE**, **RMSE**
+- Top performers:
+  - Random Forest: R² = 0.89
+  - XGBoost: R² = 0.89
+  - Gradient Boosting: R² = 0.89
+
+---
+
+### **Step 7: Conclusion**
+- Achieved high accuracy in predicting flight fares.
+- Demonstrated how ML can optimize pricing strategies in the travel industry.
+- Gained hands-on experience in data wrangling, feature engineering, and model tuning.
