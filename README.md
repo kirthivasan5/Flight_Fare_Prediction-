@@ -15,10 +15,10 @@ Out of all models above, Random Forest Algorithm, XGBoost Algorithm and Gradient
 
 In other words, it can be said that 89% of the data are fitting correctly into the model.
 
-Report on Challenges Faced
+**Report on Challenges Faced**
 Missing Values: There were very less missing data in the data set in Route and Total_Stops columns. These null values were dropped as such less missing data will not impact the data set
 
-Date Formatting: The "Date_of_Journey" column was not in a standard date format and this was challenging in performing the date based analyses. Hence, we used the below mentioned technique to handled these data:
+**Date Formatting**: The "Date_of_Journey" column was not in a standard date format and this was challenging in performing the date based analyses. Hence, we used the below mentioned technique to handled these data:
 
 Date Parsing: The "Date_of_Journey" column was converted to a standardized date format (e.g., YYYY-MM-DD) to facilitate date-based calculations and comparisons. This was done by splitting the date string, extracting day, month, and year and then reformatting was done.
 Duration Data: The "Duration" column contained values in a non-standard format (e.g., "2h 50m"). Extracting meaningful insights from this column required converting it into a numeric format. The Technique used here is as follows:
